@@ -1,0 +1,210 @@
+<html>
+<head>
+    <style>
+        #nav{
+            height:80px;
+            width:1340px;
+            border: 2px black solid;
+            background-image:url(nav.JPG);
+        }
+        #list{
+            list-style-type: none;
+            margin: 0;
+            padding-left: 10px;
+            padding-top: 10px
+            overflow: hidden;
+        }
+        #list1 a{
+            transition-duration: 1s;
+        
+            color: white;
+            padding: 0px 30px;
+            text-decoration: none;
+            display:inline;
+        }
+        #list1 a:hover{
+            background-color: #111;
+            
+        }
+        
+#list1 {
+    float: left;
+}
+        
+        #rest{
+            height:490px;
+            width:1340px;
+            background-image: url("background.JPG");
+            padding-top:70px;
+            text-align: center;
+        }
+       #a1{
+           display: inline;
+           padding: 30px 30px;
+           border: white 4px solid;
+           font-family: cursive;
+           border-radius: 5%;
+           background-color: black;
+           color: green;
+           font-size: 30px;
+           transition-duration: .7s;
+        }
+        #a1:hover{
+            font-size: 31px;
+        }
+        #rest1{
+            width: 1140px;
+            height:350px;
+            background-color: black;
+            margin-top:50px;
+            margin-left: 100px;
+            border: white 4px solid;
+            border-radius: 5%;
+            text-align: left;
+        }
+        ul li{
+            font-size: 34px;
+            padding-top: 20px;
+            color: green;
+        }
+        #bp{
+            width:1340px;
+            height:350px;
+            background-color: lightcyan;
+            padding-top: 40px;
+        }
+        #bp1{
+            width:400px;
+            height:310px;
+            background-color:  lightcyan;
+            margin-left: 20px;
+            border-right: 2px solid black;
+            float:left;
+            padding-top:40px;
+        }
+         #bp2{
+            width:400px;
+            height:310px;
+            background-color:  lightcyan;
+            margin-left: 20px;
+            border-right: 2px solid black;
+            float:left;
+             padding-top: 40px;padding-left: 20px;
+        }
+        #bp3{
+            width:400px;
+            height:310px;
+            background-color: lightcyan;
+            margin-left: 20px;
+            float:left;
+               padding-top: 40px;padding-left: 20px;
+        }
+        form{
+            font-size: 30px;
+        }
+       #bp1 img{
+            width: 100px;
+            height:100px;
+           border: 2px solid black;
+        }
+        #l2{
+            text-decoration: none;
+            color: green;
+            transition-duration: 1s;
+        }
+        #l2:hover{
+            color:white;
+        }
+       #mycanvas{
+    height:250px;
+        width:1342px;
+         border-bottom: 2px solid black;
+        background-image: url(tree.JPG);
+    }
+        
+    </style>
+    
+</head>
+<body>
+    <div id="nav">
+    <ul id ="list">
+         <li id="list1"><a href="#home">Home</a></li>
+        <li id="list1"><a class="active" href="#news">News</a></li> 
+        <li id="list1"><a href="#contact">Contact</a></li>
+        <li id="list1"><a href="#about">About</a></li>
+        </ul>
+    </div>
+       <canvas id="mycanvas"></canvas>
+   <script>
+    var canvas =document.getElementById("mycanvas");
+       var ctx = canvas.getContext("2d")
+       var x =canvas.width/2;
+       var y= canvas.height;
+       var dx=1;
+       dy=-2;
+       var ballRadius = 5;
+       function drawBall(){
+            ctx.beginPath();
+     ctx.font="20px Arial";
+           ctx.fillStyle="black";
+           ctx.fillText("Nature",x,y);
+           ctx.closePath();
+           
+       }
+       function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+       drawBall();
+            if(x + dx >( canvas.width-ballRadius-49)|| x + dx < (ballRadius-10)) {
+            dx = -dx;
+                
+        }
+        if(y + dy < ballRadius|| y+dy>canvas.height) {
+            dy = -dy;
+        }
+           x=x+dx;
+           y=y+dy;
+             requestAnimationFrame(draw);
+       }
+       draw();
+    </script>
+    <div id ="rest">
+        <h1 id="a1">BENIFITS FROM FOREST</h1>  
+        <div id="rest1">
+        <ul id="list2">
+            <li><a id="l2" href="enviorment.html"> Environmental Benifits</a></li>
+            <li><a id="l2" href="social.html">Social Benifits</a></li>
+            <li><a id="l2" href="#e">Economical Benifits</a></li>
+            <li><a id="l2" href="#e">Maintain Ecosystem Balanced</a></li>
+            <li><a id="l2" href="#e">Habitate for Birds , Mammels and Insects</a></li>
+            </ul>
+        </div>
+       
+    </div>
+     <div id="bp">
+         <div id="bp1">
+             <img src="html/NITH_logo.jpg">
+        <h2> Contact Number : 9511575598</h2>
+       <h2>  Nit Hamirpur , Himachal Pradesh</h2>
+             <h2>Postal Code :177005</h2>
+        
+         
+         </div>
+         <div id="bp2"> 
+             <h2>NAME : AMAN GUPTA</h2>
+         <h2>97,Gayatri Nagar </h2>
+             <h2>Near Vinayak Resort</h2>
+             <h2>Karauli , Rajasthan</h2>
+         
+         </div>
+         <div id="bp3">
+         <h2>Email : guptaaman70659@gmail.com</h2>
+             <form>Feedback :&nbsp;<input type="email">
+            
+             
+             </form>
+         </div>
+        </div>
+    
+    
+</body>
+</html>
